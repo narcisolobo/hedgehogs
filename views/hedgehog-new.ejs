@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hedgehogs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="site.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+
+  <style>
+    * {
+      font-family: 'Work Sans', sans-serif;
+    }
+
+    body {
+      background-color: orange;
+    }
+
+    main {
+      margin-top: 80px;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container-fluid px-0">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow py-0 fixed-top">
+      <a class="navbar-brand mr-auto larger my-1" href="/">HEDGEHOGS - A MONGODB ASSIGNMENT FOR THE MEAN STACK</a>
+    </nav>
+    <main>
+      <form action="/hedgehogs" method="POST" class="p-4 w-50 mx-auto mt-5 bg-white rounded shadow">
+        <h1 class="h4 mb-4">ADD A HEDGEHOG TO THE DATABASE:</h1>
+
+        <% if (messages) { %>
+          <% for (var key in messages) { %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <%= messages[key] %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <% } %>
+        <% } %>
+
+        <div class="form-group row">
+          <label for="commonName" class="col-2 col-form-label">Common Name:</label>
+          <div class="col-10">
+            <input type="text" class="form-control" id="commonName" name="commonName" placeholder="Common Name">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="binomialName" class="col-2 col-form-label">Binomial Name:</label>
+          <div class="col-10">
+            <input type="text" class="form-control" id="binomialName" name="binomialName" placeholder="Binomial Name">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="imageURL" class="col-2 col-form-label">Image URL:</label>
+          <div class="col-10">
+            <input type="text" class="form-control" id="imageURL" name="imageURL" placeholder="Image URL">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">SUBMIT</button>
+      </form>
+
+    </main>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>
